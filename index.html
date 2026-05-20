@@ -25,7 +25,30 @@
                     <span id="win-display">0</span>
                 </div>
             </div>
-            
+
+            <div class="roll-display">
+                <div class="roll" id="roll-0"><div class="roll-inner" id="inner-0"></div></div>
+                <div class="roll" id="roll-1"><div class="roll-inner" id="inner-1"></div></div>
+                <div class="roll" id="roll-2"><div class="roll-inner" id="inner-2"></div></div>
+            </div>
+
+            <div class="message-bar" id="message">Ready to spin</div>
+
+            <div class="controls">
+                <div class="bet-col">
+                    <button class="bet-btn" onclick="changeBet(-1)">BET -1</button>
+                    <button class="bet-btn" onclick="changeBet(1)">BET +1</button>
+                </div>
+                <button class="spin-btn" id="spin-btn" onclick="spin()">SPIN</button>
+                <div class="bet-col">
+                    <button class="max-btn" onclick="maxBet()">MAX BET</button>
+                </div>
+            </div>
+ 
+            <div class="paytable">
+                <div class="paytable-title">Paytable · 3 of a kind</div>
+                <div class="paytable-grid" id="paytable-grid"></div>
+            </div>
     
         </div>
     </body>
