@@ -108,5 +108,20 @@ body {
 }
 
 .paytable {
-    
+    margin-top: 18px;
+    border-top: 1px solid;
+    padding-top: 14px;
+}
+
+.paytable-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.paytable-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
 }
