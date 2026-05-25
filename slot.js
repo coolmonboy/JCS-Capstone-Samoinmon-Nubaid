@@ -10,17 +10,22 @@ function generateColumn() {
   let column1 = generateColumn();
     let column2 = generateColumn();
     let column3 = generateColumn(); 
-    let column4 = generateColumn();
-    let column5 = generateColumn();
+  
     
   console.log("Column 1: " + column1);
     console.log("Column 2: " + column2);    
     console.log("Column 3: " + column3);
-    console.log("Column 4: " + column4);
-    console.log("Column 5: " + column5);
+
 
 
     let reels = [0, 0, 0];
+//html link and stuff
+
+function updateReel(index, value) {
+    document.getElementById(`inner-${index}`).innerText = value;
+}
+
+
 
     function spinReel(index, stopTime) {
 
@@ -53,12 +58,39 @@ function generateColumn() {
         spinReel(2, 1600);
     
         setTimeout(() => {
-            document.getElementById("message").innerText = "Results ready!";
-            console.log("FINAL REELS:", reels);
+            document.getElementById("message").innerText = "results";
+            console.log("FINAL:", reels);
 
             bubbleSort(reels);
     
         }, 1800);
     }
 
-console.log(spin());
+function bubbleSort(arr) {
+
+    console.log("Sorting reels:", arr);
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+        
+            for (let j = 0; j < arr.length - 1; j++) {
+
+                console.log(`Comparing ${arr[j]} and ${arr[j + 1]}`);
+
+                if (arr[j] > arr[j + 1]) {
+                    console.log(`Swapping ${arr[j]} and ${arr[j + 1]}`);
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                }
+            }
+
+        }
+
+    }
+    
+    console.log("Sorted reels:", arr);
+    document.getElementById("message").innerText = "Sorted: " + arr.join(", ");
+}   
+
+
+
+    
