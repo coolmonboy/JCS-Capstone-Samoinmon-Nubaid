@@ -93,6 +93,8 @@ body {
     cursor: pointer;
     letter-spacing: 1px;
     text-align: center;
+    margin-top: 0px;
+    
 }
 
 .spin-btn {
@@ -100,20 +102,21 @@ body {
     border-radius: 10px;
     font-size: 30px;
     letter-spacing: 4px;
-    padding: 16px 0;
+    
     cursor: pointer;
     position: relative;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .max-btn {
-    border: 1px solid;
+    border: none;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 11px;
     padding: 7px 0;
     cursor: pointer;
     letter-spacing: 1px;
     text-align: center;
+    margin-left: 51px;
 }
 
 .paytable {
@@ -140,4 +143,14 @@ body {
        
     justify-content: center;
     gap: 20px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+
+    position: relative;
+    top: 230px;  
 }
