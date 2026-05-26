@@ -1,5 +1,37 @@
 //back end//
+let balance = 100;
+bet = 5;
+const MIN_BET = 1;
+let maxBet = balance;
 
+function updateStats() {
+    document.getElementById("balance-display").innerText = balance;
+    document.getElementById("bet-display").innerText = bet;
+}
+
+function changeBet(amount) {
+    let newBet = bet + amount;
+    if (newBet < MIN_BET) {
+        document.getElementById("message").innerText = "Minimum bet is " + MIN_BET;
+        return;
+    }
+    if (newBet > maxBet) {
+        document.getElementById("message").innerText = "Maximum bet is " + maxBet;
+        return;
+    }
+    if (newBet > balance) {
+        document.getElementById("message").innerText = "Not enough balance!";
+        return;
+    }
+    bet = newBet;
+    updateStats();   
+}
+
+function betMax(){
+    bet = Math.min(maxBet, balance);
+    updateStats();
+    document.getElementById("message").innerText = "Max bet set!";
+}
 
 //back end// //nubaid//
 
@@ -92,5 +124,5 @@ function bubbleSort(arr) {
 }   
 
 
-
+updateStats();
     
