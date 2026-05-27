@@ -82,7 +82,12 @@ function updateReel(index, value) {
     }
 
     function spin() {
-    
+        if (balance < bet) {
+            document.getElementById("message").innerText = "Not enough Balance!";
+            return;
+        }
+        balance -= bet;
+        updateStats();
         document.getElementById("message").innerText = "Spinning...";
     
         spinReel(0, 1000);
