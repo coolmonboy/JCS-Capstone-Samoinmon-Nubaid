@@ -79,7 +79,12 @@ body {
     align-items: center;
 }
 
-.bet col {
+#button2 {
+    position: absolute;
+    top: 100px;
+    right: 475px;
+}
+.bet-col {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -154,3 +159,5 @@ body {
     position: relative;
     top: 230px;  
 }
+
+
