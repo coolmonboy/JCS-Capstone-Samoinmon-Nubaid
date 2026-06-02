@@ -1,12 +1,12 @@
 body {
-    background-image: url("bg1.png");
+    background-image: url("bg2.png");
     background-position: center ;
     background-position-x: 70px;
-    background-size: auto;
+    background-size: flex;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 110vh;
+    min-height: 100vh;
 
 
 
@@ -120,6 +120,8 @@ body {
     letter-spacing: 1px;
     text-align: center;
     margin-left: 51px;
+    border-fill: white;
+    
 }
 
 .paytable {
