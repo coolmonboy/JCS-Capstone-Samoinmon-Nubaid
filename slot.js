@@ -78,10 +78,10 @@ function updateReel(index, value) {
     
             console.log("FINAL Reel " + index + ":", reels[index]);
 
-            let winnings = 0;
-
-const allEven = reels.every(num => num % 2 === 0);
-const allOdd = reels.every(num => num % 2 !== 0);
+        }, stopTime);
+    }
+const allEven = reels.every(num => num % 2 == 0);
+const allOdd = reels.every(num => num % 2 != 0);
 
 if (allEven) {
     winnings = bet * 2;
@@ -89,39 +89,54 @@ if (allEven) {
     document.getElementById("message").innerText =
         `EVEN BONUS! +${winnings}`;
 }
-else if (allOdd) {
+if (allOdd) {
     winnings = bet * 3;
     balance += winnings;
     document.getElementById("message").innerText =
         `ODD BONUS! +${winnings}`;
 }
 
-updateStats();
+
 
     
-        }, stopTime);
-    }
 
     function spin() {
         if (balance < bet) {
-            document.getElementById("message").innerText = "Not enough Balance!";
-            return;
-        }
-        balance -= bet;
-        updateStats();
-        document.getElementById("message").innerText = "Spinning...";
-    
-        spinReel(0, 1000);
-        spinReel(1, 1300);
-        spinReel(2, 1600);
-    
-        setTimeout(() => {
-            document.getElementById("message").innerText = "results";
-            console.log("FINAL:", reels);
+                document.getElementById("message").innerText = "Not enough Balance!";
+                return;
+            }
+            balance -= bet;
+            updateStats();
+            document.getElementById("message").innerText = "Spinning...";
 
-            bubbleSort(reels);
-    
-        }, 1800);
+            spinReel(0, 1000);
+            spinReel(1, 1300);
+            spinReel(2, 1600);
+
+          
+            setTimeout(() => {
+                console.log("FINAL:", reels);
+
+                const allEven = reels.every(num => num % 2 === 0);
+                const allOdd  = reels.every(num => num % 2 !== 0);
+
+                let winnings = 0;
+
+                if (allEven) {
+                    winnings = bet * 2;
+                    balance += winnings;
+                    document.getElementById("message").innerText = `EVEN BONUS! +${winnings}`;
+                } else if (allOdd) {
+                    winnings = bet * 3;
+                    balance += winnings;
+                    document.getElementById("message").innerText = `ODD BONUS! +${winnings}`;
+                } else {
+                    document.getElementById("message").innerText = "No win. Try again!";
+                }
+
+                updateStats();
+                bubbleSort([...reels]); 
+            }, 1800);
     }
 
 function bubbleSort(arr) {
