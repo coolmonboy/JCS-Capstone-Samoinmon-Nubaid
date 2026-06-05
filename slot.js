@@ -77,6 +77,27 @@ function updateReel(index, value) {
             updateReel(index, reels[index]);
     
             console.log("FINAL Reel " + index + ":", reels[index]);
+
+            let winnings = 0;
+
+const allEven = reels.every(num => num % 2 === 0);
+const allOdd = reels.every(num => num % 2 !== 0);
+
+if (allEven) {
+    winnings = bet * 2;
+    balance += winnings;
+    document.getElementById("message").innerText =
+        `EVEN BONUS! +${winnings}`;
+}
+else if (allOdd) {
+    winnings = bet * 3;
+    balance += winnings;
+    document.getElementById("message").innerText =
+        `ODD BONUS! +${winnings}`;
+}
+
+updateStats();
+
     
         }, stopTime);
     }
